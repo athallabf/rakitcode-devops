@@ -7,12 +7,11 @@ features of a client site React project include:
 5. Dynamic data rendering and filtering to provide a personalized experience for users
 6. Analytics and tracking functionality to monitor user behavior and website performance
 
-
 To start a React project, you can follow these steps:
 
 1. Install Node.js and npm: React requires Node.js and its package manager npm to be installed on your system. You can download and install Node.js from the official website: https://nodejs.org
 
-2. Create a new project using Create React App: Create React App is a tool that makes it easy to create a new React project with a basic file structure and development server already set up. To use it, open a terminal window and run the following command: 
+2. Create a new project using Create React App: Create React App is a tool that makes it easy to create a new React project with a basic file structure and development server already set up. To use it, open a terminal window and run the following command:
 
    ```
    npx create-react-app my-app
@@ -37,3 +36,17 @@ To start a React project, you can follow these steps:
 5. Start coding: With the project set up and running, you can start writing your React code. The project files are located in the "src" directory. You can edit these files using your favorite text editor or IDE.
 
 That's it! You now have a new React project set up and ready to go.
+
+Docker Setup
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+```
